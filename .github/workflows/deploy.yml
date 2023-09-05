@@ -1,5 +1,5 @@
 # 部署到 GitHub Pages 的简单工作流程
-name: Deploy to GitHub Pages - 部署到 GitHub Pages
+name: Deploy to GitHub Pages 部署到 GitHub Pages
 
 on:
   # 当推送目标是默认分支（main）时触发
