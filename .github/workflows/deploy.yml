@@ -47,7 +47,7 @@ jobs:
       run: npm run build
       
     - name: upload artifact - 上传构建产物dist
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v2
       with:
         name: 只上传npm打包后生成的dist目录
         path: './dist'
