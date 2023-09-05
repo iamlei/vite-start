@@ -1,5 +1,5 @@
 # 部署到 GitHub Pages 的简单工作流程
-name: Deploy to GitHub Pages - 部署到 GitHub Pages
+name: Deploy to GitHub Pages - 部署到 GitHub
 
 on:
   # 当推送目标是默认分支（main）时触发
@@ -30,7 +30,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     # 步骤
     steps:
-    - name: checkout - 检出
+    # 步骤名称
+    - name: checkout - 检出 即切换到存储库分支
       uses: actions/checkout@v3
 
     - name: Use Node.js 16 - 使用nodejs-v16.x
@@ -38,7 +39,6 @@ jobs:
       with:
         node-version: 16
         
-    # 步骤名称
     - name: npm install - 安装依赖
       # 步骤执行指令
       run: npm install
@@ -46,8 +46,7 @@ jobs:
     - name: npm run build - 编译和缩小以用于生产
       run: npm run build
 
-    - name: 配置 - Pages
-      uses: actions/configure-pages@v3
+    
     # 统一 上传构建版本 和 部署到github页面版本 为v2
     - name: Upload artifact - 上传构建产物dist
       uses: actions/upload-pages-artifact@v2
