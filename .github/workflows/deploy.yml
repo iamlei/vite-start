@@ -45,11 +45,13 @@ jobs:
       
     - name: npm run build - 编译和缩小以用于生产
       run: npm run build
-      
-    - name: upload artifact - 上传构建产物dist
+
+    - name: 配置 - Pages
+      uses: actions/configure-pages@v3
+    # 统一 上传构建版本 和 部署到github页面版本 为v2
+    - name: Upload artifact - 上传构建产物dist
       uses: actions/upload-pages-artifact@v2
       with:
-        name: 只上传npm打包后生成的dist目录
         path: './dist'
 
     - name: Deploy to GitHub Pages - 部署到 GitHub Pages
