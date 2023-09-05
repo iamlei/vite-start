@@ -1,4 +1,3 @@
-# 部署到 GitHub Pages 的简单工作流程
 name: Deploy to GitHub Pages - 部署到 GitHub Pages
 
 on:
