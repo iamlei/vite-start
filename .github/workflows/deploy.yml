@@ -31,7 +31,7 @@ jobs:
     # 步骤
     steps:
     - name: checkout - 检出
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
     - name: Use Node.js 16 - 使用nodejs-v16.x
       uses: actions/setup-node@v3
@@ -39,17 +39,19 @@ jobs:
         node-version: 16
         
     # 步骤名称
-    - name: npm install 安装依赖
+    - name: npm install - 安装依赖
       # 步骤执行指令
       run: npm install
-    - name: npm run build
+      
+    - name: npm run build - 编译和缩小以用于生产
       run: npm run build
       
-    - name: Upload artifact - 上传构建产物
+    - name: upload artifact - 上传构建产物dist
       uses: actions/upload-pages-artifact@v1
       with:
+        name: 只上传npm打包后生成的dist目录
         path: './dist'
 
-    - name: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages - 部署到 GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v1
+      uses: actions/deploy-pages@v2
