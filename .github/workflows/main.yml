@@ -43,4 +43,7 @@ jobs:
       id: deployment
       uses: actions/deploy-pages@v1
       with:
-        basepath: vue3-basic-starter
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        publish_branch: gh-pages
+        basepath: ${{ github.repository }} # 使用当前存储库名称作为 basepath
