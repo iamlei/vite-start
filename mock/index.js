@@ -2,6 +2,7 @@ import Mock from "mockjs"
 // 内存模拟数据
 const arr = []
 for (let i = 0; i < 10; i++) {
+  // 在 Mock.js 中，@id、@cname、@county 是一个内置的占位符，使用Mock.mock("@cname")生成一个随机的中文名字
   arr.push({
     id: Mock.mock("@id"),
     name: Mock.mock("@cname"),
