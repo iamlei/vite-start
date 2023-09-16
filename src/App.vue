@@ -6,7 +6,7 @@ import axios from 'axios'
 // TODO:列表渲染
 const list = ref([])
 const getList = async () => {
-  const res = await axios.get("/list")
+  const res = await axios.get("./list")
   list.value = res.data
 }
 onMounted(() => getList())
